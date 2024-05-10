@@ -10,8 +10,31 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import dynamic from 'next/dynamic';
 const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), { ssr: false });
 const HeroSection = () => {
+
+  // const handleDownload = () => {
+  //   window.location.href = '/public/images/app-release.apk'; // Update the path if necessary
+  // };
+  const handleDownload = () => {
+    // Construct the URL to the APK file
+    const apkUrl = '/public/images/app-release.apk'; // Adjust the path if necessary
+
+    // Create a temporary anchor element
+    const downloadLink = document.createElement('a');
+    downloadLink.href = apkUrl;
+    downloadLink.setAttribute('download', 'MGM.apk'); // Set the download attribute
+
+    // Append the anchor element to the document body
+    document.body.appendChild(downloadLink);
+
+    // Trigger the click event on the anchor element
+    downloadLink.click();
+
+    // Clean up
+    document.body.removeChild(downloadLink);
+  };
+
   return (
-    <section className="p-2" style={{backgroundColor:'#fff'}}>
+    <section className="p-2" style={{ backgroundColor: '#fff' }}>
       <div className="container">
         <div className="row">
           <motion.div
@@ -22,14 +45,14 @@ const HeroSection = () => {
           >
             <div>
               <h1 className="text-[#043EA7] mb-1  fs-lg-6 fw-bold font-Montserrat font-weight-bold" style={{ fontSize: "55px", lineHeight: "64px" }}>
-                <span className="text-[#043EA7]">Coming Soon:</span>
+                <span className="text-[#043EA7]">Experience the Thrill </span>
                 <br />
               </h1>
               <h1 className="text-[#001438]  fs-2 fs-lg-3 lh-1.5 font-Montserrat" style={{ fontSize: "30px", lineHeight: "45px", fontWeight: 600 }}>
-                Dive into the World of <br /> Color Prediction!
+                MGM - MultiMagicGame App <br /> Download Now!
               </h1>
               <p className="text-[#8E8E8E]  fs-sm-lg mb-4 mb-lg-6 lh-1.5 font-Montserrat" style={{ fontSize: "20px", lineHeight: "35px", fontWeight: 500 }}>
-                Prepare to Test Your Luck: The Color Prediction Game is Coming Soon! Get Ready to Predict and Win Big. Stay Tuned for Thrills, Excitement, and Endless Possibilities!
+                Dive into a world of endless fun and excitement with MGM - MultiMagicGame app! Immerse yourself in a myriad of captivating games all in one place. Whether you're into puzzles, adventures, or strategy, MGM offers a diverse collection to suit every gaming preference. Download now and unlock a universe of entertainment at your fingertips!
               </p>
             </div>
           </motion.div>
@@ -49,7 +72,11 @@ const HeroSection = () => {
               />
             </div>
           </motion.div>
+          <div style={{ height: 100 }}>
+            <button onClick={handleDownload} type="button" class="btn btn-success">Click To Download!</button>
+          </div>
         </div>
+
       </div>
     </section>
   );

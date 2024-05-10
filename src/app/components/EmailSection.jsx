@@ -43,57 +43,50 @@ const EmailSection = () => {
     <section
       id="contact"
       className=" grid md:grid-cols-2 my-12 md:my-12  gap-4 relative">
-      <div className="  m-auto " style={{ minWidth: "40% ", maxWidth: "100%" }}>
+      <div className="  m-auto " style={{ minWidth: "40% ", maxWidth: "100%", }}>
         <span class="font-weight-600 text-dark my-2 responsive-heading">
           Get in touch
         </span>
-        {emailSubmitted ? (
-          <p className="text-dark-500 text-sm mt-2">
-            Email sent successfully!
-          </p>
-        ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <input
-                name="subject"
-                type="text"
-                id="subject"
-                required
-                className="form-control border border-dark rounded-lg mb-3"
-                placeholder="Name"
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                name="email"
-                type="email"
-                id="email"
-                required
-                className="form-control border border-dark rounded-lg mb-3"
-                placeholder="Your email"
-              />
-            </div>
-            <div className="mb-3">
-              <textarea
-                name="message"
-                id="message"
-                className="form-control border border-dark rounded-lg mb-3"
-                placeholder="Message..."
-              />
-            </div>
-            <div className="mb-3 text-start">
-              <button
-                className="btn font-weight-600 text-white px-4 py-2"
-                style={{ fontSize: '16px', backgroundColor: '#043EA7' }}
-              >
-                Submit
-              </button>
-            </div>
-          </form>
-
-        )}
+        <form className="flex flex-col" onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <input
+              name="subject"
+              type="text"
+              id="subject"
+              required
+              className="form-control border border-dark rounded-lg mb-3"
+              placeholder="Name"
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              name="email"
+              type="email"
+              id="email"
+              required
+              className="form-control border border-dark rounded-lg mb-3"
+              placeholder="Your email"
+            />
+          </div>
+          <div className="mb-3">
+            <textarea
+              name="message"
+              id="message"
+              className="form-control border border-dark rounded-lg mb-3"
+              placeholder="Message..."
+            />
+          </div>
+          <div className="mb-3 text-start">
+            <button
+              className="btn font-weight-600 text-white px-4 py-2"
+              style={{ fontSize: '16px', backgroundColor: '#043EA7' }}
+            >
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
-      <div className="z-1" style={{ minWidth: "60% ", maxWidth: "100%" }}>
+      {/* <div className="z-1" style={{ minWidth: "60% ", maxWidth: "100%" }}>
         <p className="text-dark mb-4 max-w-md font-inter" style={{ fontSize: "16px", lineHeight: "19.36px", fontWeight: 400 }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus qui earum omnis quis saepe vel quidem soluta
         </p>
@@ -139,8 +132,8 @@ const EmailSection = () => {
             </span>
           </div>
         </div>
-      </div>
-    </section>
+      </div> */}
+    </section >
   );
 };
 

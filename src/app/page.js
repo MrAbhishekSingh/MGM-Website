@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-[#EFF3FB]">
       <Navbar />
-      <div className="container-fluid  mx-auto px-12 py-4 mainsection" style={{marginTop:'37px'}} >
+      <div className="container-fluid  mx-auto px-12 py-4 mainsection" style={{ marginTop: '37px' }} >
         <HeroSection />
         <AchievementsSection />
         <AboutSection />
