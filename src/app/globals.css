@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+#picassoFooter {
+  background-color: #0f1022;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-navigation,
+.footer-contact,
+.footer-social {
+  margin: 10px;
+}
+
+.footer-navigation h3,
+.footer-contact h3,
+.footer-social h3 {
+  color: #f0f0f0;
+  margin-bottom: 0px;
+}
+
+.footer-navigation ul,
+.footer-social .social-icons {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-navigation ul li,
+.social-icon {
+  margin-bottom: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.footer-navigation ul li a,
+.social-icon {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.social-icon {
+  display: inline-block;
+  padding: 8px;
+  background-color: #333;
+  margin-right: 5px;
+}
+
+.social-icon:hover,
+.footer-navigation ul li a:hover {
+  transform: scale(1.1);
+}
+.button-up,
+.button-down {
+  position: relative;
+  padding: 17px;
+  margin: 30px auto;
+  background: #0f70ee;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transition: all 0.2s linear;
+}
+
+.footer-art canvas {
+  max-width: 100px;
+  height: auto;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  #picassoFooter {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-art canvas {
+    max-width: 100%;
+  }
+}
+.responsive-heading {
+  font-size: 53px;
+}
+@media (max-width: 768px) {
+  .responsive-heading {
+    font-size: 2rem;
+    
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-heading {
+    font-size: 1.5rem;
+   
+  }
+}
+
+
+@media (max-width: 1024) {
+  .mainsection {
+   margin-top: 15px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainsection {
+    margin-top: 15px !important;
+  }
+}
