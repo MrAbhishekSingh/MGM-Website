@@ -1,24 +1,15 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 // Import Bootstrap CSS file
 import 'bootstrap/dist/css/bootstrap.min.css';
-import dynamic from 'next/dynamic';
-const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), { ssr: false });
+
 const HeroSection = () => {
-
-  // const handleDownload = () => {
-  //   window.location.href = '/public/images/app-release.apk'; // Update the path if necessary
-  // };
   const handleDownload = () => {
-    // Construct the URL to the APK file
-    const apkUrl = '/public/images/app-release.apk'; // Adjust the path if necessary
+    const apkUrl = '/app-release.apk'; // Adjust the path if necessary
 
-    // Create a temporary anchor element
     const downloadLink = document.createElement('a');
     downloadLink.href = apkUrl;
     downloadLink.setAttribute('download', 'MGM.apk'); // Set the download attribute
@@ -52,7 +43,7 @@ const HeroSection = () => {
                 MGM - MultiMagicGame App <br /> Download Now!
               </h1>
               <p className="text-[#8E8E8E]  fs-sm-lg mb-4 mb-lg-6 lh-1.5 font-Montserrat" style={{ fontSize: "20px", lineHeight: "35px", fontWeight: 500 }}>
-                Dive into a world of endless fun and excitement with MGM - MultiMagicGame app! Immerse yourself in a myriad of captivating games all in one place. Whether you're into puzzles, adventures, or strategy, MGM offers a diverse collection to suit every gaming preference. Download now and unlock a universe of entertainment at your fingertips!
+                {"Dive into a world of endless fun and excitement with MGM - MultiMagicGame app! Immerse yourself in a myriad of captivating games all in one place. Whether you're into puzzles, adventures, or strategy, MGM offers a diverse collection to suit every gaming preference. Download now and unlock a universe of entertainment at your fingertips!"}
               </p>
             </div>
           </motion.div>
@@ -73,10 +64,9 @@ const HeroSection = () => {
             </div>
           </motion.div>
           <div style={{ height: 100 }}>
-            <button onClick={handleDownload} type="button" class="btn btn-success">Click To Download!</button>
+            <button onClick={handleDownload} type="button" className="btn btn-success">Click To Download!</button>
           </div>
         </div>
-
       </div>
     </section>
   );
